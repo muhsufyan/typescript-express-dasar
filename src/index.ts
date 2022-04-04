@@ -6,15 +6,16 @@ import helmet from "helmet";
 import cors from "cors";
 import UserRoutes from './routers/UserRoutes';
 import AuthRoutes from './routers/AuthRoutes';
+import {config as dotenv} from 'dotenv';
 
 class App{
     // buat variabel global app yg bertipe Application
     public app: Application;
     // list library yg digunakan
     protected plugins(): void{
-        // use untuk menggunakan/menerapkan suatu method/middleware/library ke app
+        // use untuk menggunakan/menerapkan suatu library ke app
         this.app.use(bodyParser.json());
-        // gunakan middleware/library morgan di mode development
+        // gunakan library
         this.app.use(morgan("dev"));
         this.app.use(compression());
         this.app.use(helmet());
@@ -37,6 +38,8 @@ class App{
         this.plugins();
         // panggil route yg tlh dibuat diatas
         this.routes();
+        // panggil dotenv, jika tdk dipanggil maka akan bernilai undefined
+        dotenv();
     }
 }
 // port yg digunakan
@@ -45,5 +48,6 @@ const port: number = 8000;
 const app = new App().app;
 // jlnkan app
 app.listen(port, ()=>{
-    console.log("tulisan ini dicetak di backend (server) atau terminal, app run on port "+port);
+    console.log("tulisan ini dicetak di backend (server) atau terminal, app run on port "+process.env.APP_PORT);
+    console.log(process.env.DB_HOST)
 });

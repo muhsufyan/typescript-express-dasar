@@ -1,7 +1,7 @@
 # typescript-express-dasar
-middleware: fungsi yg dijlnkan sblm request menjlnkan controller<br>
-bahasan ini hanya mengenal apa itu middleware jd auth (bisanya jwt/oauth2) hanya sembarang saja
+environment variable dg dotenv<br>
+.env tdk di push ke git tp karena ini bljr maka kita masukkan saja dulu
 <ul>
-    <li>buat folder src/middleware</li>
+    <li>yarn add dotenv</li>
     <li></li>
 </ul>
