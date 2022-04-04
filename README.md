@@ -1,9 +1,5 @@
 # typescript-express-dasar
 <ul>
-    <li>yarn init atau npm init</li>
-    <li>yarn add typescript nodemon -D, install typescript dan nodemon untuk auto reload saat dev (auto convert to js) -D artinya run untuk mode development</li>
-    <li>di package.json tambhkan "scripts" berisi perintah yg akan dijlankan. "tsc":"rm -f build/ && tsc" untuk convert ts ke js, "ts":"rm -f build/ && tsc -w" auto convert ts ke js, "dev":"nodemon ./build/index.js" run nodemon</li>
-    <li>buat config typescript dg perintah ./node_modules/.bin/tsc --init untuk window .\node_modules\.bin\tsc --init
-    <br> akan ada file baru tsconfig.json, aktifkan allowJS, outDir (untuk hasil compile simpan di folder /.build</li>
-    <li>jalankan 2 terminal yaitu yarn ts (muncul folder build) dan yarn dev (run app kita)</li>
+    <li>yarn add express untuk deploy production untuk development yarn add express -D <br>untuk deploy production pd package.json disimpan pd dependencies sedangkan deploy development ada di devDependencies</li>
+    <li>agar import express from 'express' dpt berjln install "yarn add @types/express -D" <br>hal diatas agar dpt import express dan ini termasuk kedlm development hanya perlu di development saja</li>
 </ul>
