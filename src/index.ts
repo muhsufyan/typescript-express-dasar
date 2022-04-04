@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from 'express'; 
 import bodyParser from 'body-parser';
+import morgan from 'morgan';
 class App{
     // buat variabel global app yg bertipe Application
     public app: Application;
@@ -7,6 +8,8 @@ class App{
     protected plugins(): void{
         // use untuk menggunakan/menerapkan suatu method/middleware/library ke app
         this.app.use(bodyParser.json());
+        // gunakan middleware/library morgan di mode development
+        this.app.use(morgan("dev"));
     }
     // buat routernya
     protected routes(): void{

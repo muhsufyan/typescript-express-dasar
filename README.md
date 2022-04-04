@@ -1,7 +1,7 @@
 # typescript-express-dasar
 <ul>
-    <li>perlu data parse untuk parser data dari client jd format json<br> yarn add body-parser <br> {
- "title": "hey tayo",
- "image": "gambar"
-}</li>
+    <li>morgan : melihat url/endpoint yg dikonsumsi client(bertugas monitoring/logger), kita install di development<br>
+    yarn add morgan -D
+    </li>
+    <li>yarn add @types/morgan -D agar dpt auto anotasi saat pemanggilan method <br> liat di terminal yarn dev ketika hit endpoint</li>
 </ul>
