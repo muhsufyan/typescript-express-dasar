@@ -1,8 +1,7 @@
 # typescript-express-dasar
+Refactore dan interface untuk route, buat route yg terpisah filenya dan route yg tdk terpisah agar terihat perbedaannya<br>
+hal ini perlu dilakukan agar kode lbh rapih, mudah dipahami, mudah ketika ada perubahan
 <ul>
-    <li>compression :memperkecil ukuran response ke client</li>
-    <li>CORS : handling url yg mengakses ke endpoint kita</li>
-    <li>helmet :melindungi header dari client dan server</li>
-    <li>yarn add compression cors helmet ini akan dideploy ke production</li>
-    <li>yarn add @types/compression @types/cors @types/helmet -D agar dpt auto anotasi saat pemanggilan method <br>pengujiannya waktu response lbh cpt, header lbh aman</li>
+    <li>semua route akan disimpan di folder src/routers</li>
+    <li>kita buat UserRoutes.ts untuk kode route user, lalu buat juga interfacenya agar lbh rapi dan mudah dibaca kodingannya RouteInterface.ts <br> interface akan diimplement kasus ini interface RouteInterface.ts diimplemen oleh UserRoutes.ts</li>
 </ul>

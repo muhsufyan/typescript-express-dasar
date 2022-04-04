@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import compression from "compression";
 import helmet from "helmet";
 import cors from "cors";
+import UserRoutes from './routers/UserRoutes';
 
 class App{
     // buat variabel global app yg bertipe Application
@@ -28,7 +29,10 @@ class App{
         this.app.route("/").post((req: Request, res: Response)=>{
             // cetak param yg dikirim client
             res.send(req.body)
-        })
+        });
+        // gunakan/jlnkan route user yg telah dibuat di file terpisah. 
+        // prefixnya users, nama filenya di UserRoutes
+        this.app.use("/users", UserRoutes)
     }
     // buat constructor untuk Application agar tipe data Application dpt digunakan
     constructor(){
