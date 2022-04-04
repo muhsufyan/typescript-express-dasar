@@ -1,0 +1,17 @@
+{
+  "name": "dasar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/muhsufyan/typescript-express-dasar.git",
+  "author": "muhsufyan <muh.sufyan.ts@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "tsc":"rm -f build/ && tsc",
+    "ts":"rm -f build/ && tsc -w",
+    "dev":"nodemon ./build/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "typescript": "^4.6.3"
+  }
+}
