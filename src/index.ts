@@ -32,7 +32,7 @@ class App{
         });
         // gunakan/jlnkan route user yg telah dibuat di file terpisah. 
         // prefixnya users, nama filenya di UserRoutes
-        this.app.use("/users", UserRoutes)
+        this.app.use("/api/v1/users", UserRoutes)
     }
     // buat constructor untuk Application agar tipe data Application dpt digunakan
     constructor(){
