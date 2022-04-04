@@ -1,15 +1,22 @@
 import express, { Application, Request, Response } from 'express'; 
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
+import compression from "compression";
+import helmet from "helmet";
+import cors from "cors";
+
 class App{
     // buat variabel global app yg bertipe Application
     public app: Application;
-    // convert jd json dg body parser
+    // list library yg digunakan
     protected plugins(): void{
         // use untuk menggunakan/menerapkan suatu method/middleware/library ke app
         this.app.use(bodyParser.json());
         // gunakan middleware/library morgan di mode development
         this.app.use(morgan("dev"));
+        this.app.use(compression());
+        this.app.use(helmet());
+        this.app.use(cors());
     }
     // buat routernya
     protected routes(): void{
