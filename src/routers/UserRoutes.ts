@@ -1,6 +1,8 @@
 import {Router, Request, Response} from 'express';
 // import interface yg tlh dibuat
 import IRouter from './RouteInterface';
+// import controller (logik)
+import UserController from '../controllers/UserController';
 
 // implementasikan IRouter di class UserRoutes
 class UserRoutes implements IRouter{
@@ -14,13 +16,8 @@ class UserRoutes implements IRouter{
     }
     // karena implementasi IRoute maka hrs buat dulu yg diimplementasinya yaitu routes
     public routes(): void {
-        this.router.get("/", (req: Request, res: Response)=>{
-            res.send("endpoint index user")
-        });
-        // endpoint post untuk user baru
-        this.router.post("/", (req: Request, res: Response)=>{
-            res.send(req.body)
-        });
+        this.router.get("/", UserController.index);
+        this.router.post("/", UserController.create);
     };
 }
 // expose route user ini
