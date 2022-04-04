@@ -1,7 +1,7 @@
 # typescript-express-dasar
-membuat otentifikasi (login dan register)<br>
-kita buat route dan controller untuk otentifikasi
+middleware: fungsi yg dijlnkan sblm request menjlnkan controller<br>
+bahasan ini hanya mengenal apa itu middleware jd auth (bisanya jwt/oauth2) hanya sembarang saja
 <ul>
-    <li>AuthController karena hanya create dan index maka tdk perlu implement interface IController kecuali kita buat interface yg baru </li>
-    <li>karena UserRoutes dan AuthRoutes memiliki constructor dan public route yg sama maka kita lakukan refactor (supaya reuse), simpan di BaseRouter disini kita membuat abstract class </li>
+    <li>buat folder src/middleware</li>
+    <li></li>
 </ul>
