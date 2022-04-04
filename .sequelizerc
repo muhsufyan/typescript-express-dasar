@@ -1,0 +1,19 @@
+var path = require('path')
+require('dotenv').config()
+
+if(process.env.MODE_ENV == 'development'){
+    module.exports = {
+        'config':          path.resolve('src/config', 'database.js'),
+        'migrations-path': path.resolve('src/db/','migrations'),
+        'models-path':     path.resolve('src/db/','models'),
+        'seeders-path':    path.resolve('src/db/','seeders'),
+      }
+}else{
+    // process.env.MODE_ENV == 'production'
+    module.exports = {
+        'config':          path.resolve('build/config', 'database.js'),
+        'migrations-path': path.resolve('build/migrations'),
+        'models-path':     path.resolve('build/models'),
+        'seeders-path':    path.resolve('build/seeders'),
+      }
+}
