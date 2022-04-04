@@ -5,6 +5,7 @@ import compression from "compression";
 import helmet from "helmet";
 import cors from "cors";
 import UserRoutes from './routers/UserRoutes';
+import AuthRoutes from './routers/AuthRoutes';
 
 class App{
     // buat variabel global app yg bertipe Application
@@ -25,14 +26,10 @@ class App{
         this.app.route("/").get((req: Request, res: Response)=>{
             res.send("route get ditulis dlm typescript")
         }),
-        // melihat param req pada post
-        this.app.route("/").post((req: Request, res: Response)=>{
-            // cetak param yg dikirim client
-            res.send(req.body)
-        });
         // gunakan/jlnkan route user yg telah dibuat di file terpisah. 
         // prefixnya users, nama filenya di UserRoutes
         this.app.use("/api/v1/users", UserRoutes)
+        this.app.use("/api/v1/auth", AuthRoutes)
     }
     // buat constructor untuk Application agar tipe data Application dpt digunakan
     constructor(){
