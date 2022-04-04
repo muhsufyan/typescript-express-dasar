@@ -27,8 +27,7 @@ class App{
         this.app.route("/").get((req: Request, res: Response)=>{
             res.send("route get ditulis dlm typescript")
         }),
-        // gunakan/jlnkan route user yg telah dibuat di file terpisah. 
-        // prefixnya users, nama filenya di UserRoutes
+        // route terpisah
         this.app.use("/api/v1/users", UserRoutes)
         this.app.use("/api/v1/auth", AuthRoutes)
     }

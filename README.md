@@ -1,6 +1,6 @@
 # typescript-express-dasar
-Sequelize: menghubungkan backend dg db (sql)<br>
-
+Sequelize bersifat asynchronous<br>
+ISSUE: ERROR KARENA PASSWORD DB TIDAK BOLEH KOSONG
 <ul>
     <li>yarn add sequelize sequelize-cli mysql2</li>
     <li>.sequelizerc adlh file untuk config path ke db</li>
