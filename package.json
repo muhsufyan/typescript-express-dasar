@@ -8,6 +8,7 @@
   "scripts": {
     "tsc": "rm -f build/ && tsc",
     "ts": "rm -f build/ && tsc -w",
+    "convertts2js":"tsc -w",
     "dev": "nodemon ./build/index.js"
   },
   "devDependencies": {

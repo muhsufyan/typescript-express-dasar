@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 // js biasa
-const db = require("../db/models")
+const db = require("../db/models");
 class AuthController {
     // sequelize itu asynchronous, maka perlu async dan returnnya Promise dg generic Response
     register = async (req: Request, res: Response): Promise<Response> => {
