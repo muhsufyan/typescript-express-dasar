@@ -1,10 +1,10 @@
 # typescript-express-dasar
-validasi data dari client dengan library express-validator<br>
-tp kita buat middleware dulu untuk validasi datanya di folder middleware
+fitur login & jwt<br>
+
 <ul>
-    <li>yarn add express-validator<br></li>
-    <li>validator diimport di route(AuthRoutes)</li>
-    <li><br><b></b><br>
+    <li>yarn add jsonwebtoken<br>yarn add @types/jsonwebtoken -D</li>
+    <li>buat func yg mengecek password di db dg yg diinput di utils/PasswordHash.ts</li>
+    <li>membuat func token dan validasinya di utils/tokenjwt.ts<br><b></b><br>
     </li>
     <li></li>
     <li> <b></b> <br><br></li>
