@@ -1,10 +1,10 @@
 # typescript-express-dasar
-enkripsi password dg bcrypt<br>
-bcrypt hanya berjalan 1 arah (tidak bisa dikembalikan lagi)
+validasi data dari client dengan library express-validator<br>
+tp kita buat middleware dulu untuk validasi datanya di folder middleware
 <ul>
-    <li>yarn add bcypt <br>yarn add @types/bcrypt -D</li>
-    <li>kode enkripsi/hash ada di direktori utils</li>
-    <li>yarn add @types/validator @types/bluebird -D<br><b></b><br>
+    <li>yarn add express-validator<br></li>
+    <li>validator diimport di route(AuthRoutes)</li>
+    <li><br><b></b><br>
     </li>
     <li></li>
     <li> <b></b> <br><br></li>
