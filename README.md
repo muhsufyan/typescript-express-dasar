@@ -1,13 +1,13 @@
 # typescript-express-dasar
-Sequelize bersifat asynchronous<br>
-ISSUE: ERROR KARENA PASSWORD DB TIDAK BOLEH KOSONG
+enkripsi password dg bcrypt<br>
+bcrypt hanya berjalan 1 arah (tidak bisa dikembalikan lagi)
 <ul>
-    <li>yarn add sequelize sequelize-cli mysql2</li>
-    <li>.sequelizerc adlh file untuk config path ke db</li>
-    <li>set up db (generate setting ke db)<br> window di terminal <b>.\node_modules\.bin\sequelize-cli init</b><br>
-    akan generate folder config dan models</li>
-    <li>config/database.js kita perlu set value ke dotenv</li>
-    <li>buat migration <b>.\node_modules\.bin\sequelize-cli model:generate --name user --attributes username:string,password:string --underscored</b> <br> nama tabel user, fieldnya ada username dan password bertipe string, nama fieldnya pake underscore jika tdk akan lowercase <br> akan generate file baru di migrations</li>
-    <li>buat db baru "typescript" <br> buat migrasi ke db <b>.\node_modules\.bin\sequelize-cli db:migrate</b> jika ingin mengubah misal nama tabel users jd user maka di file migrations ubah users jd user</li>
+    <li>yarn add bcypt <br>yarn add @types/bcrypt -D</li>
+    <li>kode enkripsi/hash ada di direktori utils</li>
+    <li>yarn add @types/validator @types/bluebird -D<br><b></b><br>
+    </li>
+    <li></li>
+    <li> <b></b> <br><br></li>
+    <li><br><b></b></li>
     <li></li>
 </ul>
