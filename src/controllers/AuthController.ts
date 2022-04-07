@@ -45,6 +45,9 @@ class AuthController {
     // jika passwordnya tdk sama/salah
     return res.send("auth is failed")
     }
+    profile = (req: Request, res: Response): Response => {
+        return res.send(req.app.locals.credential)
+    }
 }
 
 export default new AuthController();

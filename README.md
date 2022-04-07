@@ -1,10 +1,10 @@
 # typescript-express-dasar
-fitur login & jwt<br>
-
+cek apakah ada jwt<br>
+untuk melakukan ini kita bermain di middleware
 <ul>
     <li>yarn add jsonwebtoken<br>yarn add @types/jsonwebtoken -D</li>
-    <li>buat func yg mengecek password di db dg yg diinput di utils/PasswordHash.ts</li>
-    <li>membuat func token dan validasinya di utils/tokenjwt.ts<br><b></b><br>
+    <li>buat func (middleware) yg mengecek apakah ada token jwt di middleware/AuthMiddleware.ts</li>
+    <li><br><b></b><br>
     </li>
     <li></li>
     <li> <b></b> <br><br></li>
