@@ -1,5 +1,5 @@
 # typescript-express-dasar
-validasi(TodoValidator.ts) dan create todo<br>
+update, read, delete todo<br>
 <ul>
     <li></li>
     <li></li>

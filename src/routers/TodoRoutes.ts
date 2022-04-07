@@ -7,8 +7,8 @@ import todovalidate from '../middleware/TodoValidator';
 class TodoRoutes extends BaseRoutes{
     // karena implementasi IRoute maka hrs buat dulu yg diimplementasinya yaitu routes
     public routes(): void {
-        // route / ini siapapun bisa melihat tanpa harus punya token(login)
-        this.router.get("/", TodoController.index);
+        // tampilkan hanya todo yg dibuat oleh si user 
+        this.router.get("/", auth, TodoController.index);
         // hrs login dulu jd gunakan middleware auth lalu data akan divalidasi jika valid akan dibuat data barunya
         this.router.post("/", auth, todovalidate, TodoController.create);
         this.router.get("/:id", auth, TodoController.show);

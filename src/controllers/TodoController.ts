@@ -7,12 +7,22 @@ import IController from './ControllerInterface';
 const db = require("../db/models")
 
 class TodoController implements IController{
-    index(req: Request, res: Response): Response {
-       return res.send("index");
+    index = async (req: Request, res: Response): Promise<Response> => {
+        // get id user yg melakukan create todo
+        const {id} = req.app.locals.credential;
+        // ambil semua data di tabel todo
+        const data = await db.todo.findAll({
+            where:{user_id: id},
+            // hanya tampilkan id dan deskripsi
+            attributes: ['id','description']
+        })
+       return res.send({
+           data
+       });
     }
     // sequelize asynchronous jd hrs promise async await
     create = async (req: Request, res: Response): Promise<Response> => {
-        // get id user yg melakukan create todo
+        // get id user yg login
         const {id} = req.app.locals.credential;
         // get data description dari input user
         const {description} = req.body;
@@ -26,14 +36,38 @@ class TodoController implements IController{
             message: "success created"
         });
     }
-    show(req: Request, res: Response): Response {
-       return res.send("show 1 id")
+    show = async (req: Request, res: Response): Promise<Response> => {
+        // get id user yg login & simpan sebagai user_id
+        const {id: user_id} = req.app.locals.credential;
+        // get id dari url param
+        const {id} = req.params
+        // get data dari db
+        const data = await db.todo.findOne({where: {id, user_id}})
+       return res.send({data: data}) 
     }
-    update(req: Request, res: Response): Response {
-        return res.send("update");
+    update = async (req: Request, res: Response): Promise<Response> => {
+        // get id user yg login & simpan sebagai user_id
+        const {id: user_id} = req.app.locals.credential;
+        // get id dari url param
+        const {id} = req.params
+        // tangkap data deskripsi yg baru/diupdate
+        const {description} = req.body
+        await db.todo.update({
+            description
+        },{
+            where: {id, user_id}
+        })
+        return res.send({message:"data updated"});
     }
-    delete(req: Request, res: Response): Response {
-        return res.send("delete")
+    delete = async (req: Request, res: Response): Promise<Response> => {
+        // get id user yg login & simpan sebagai user_id
+        const {id: user_id} = req.app.locals.credential;
+        // get id dari url param
+        const {id} = req.params
+        await db.todo.destroy({
+            where: {id, user_id}
+        })
+        return res.send({message:"data deleted"})
     }
     
 }
