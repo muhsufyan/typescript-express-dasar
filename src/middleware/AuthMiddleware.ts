@@ -12,9 +12,9 @@ export const auth = (req: Request, res: Response, next: NextFunction): any =>{
         // verifikasi token (valid/tdk)
         const credential: string | object = jwt.verify(token, secretKey);
         if(credential){
-            // lihat/akses/get data dlm payloadnya 
+            // simpan data credential di local, sehingga semua method di controller dpt mengaksesnya (get datanya/payload) 
             req.app.locals.credential = credential;
-            next()
+            return next()
         }
         // token invalid
         return res.status(401).send("token invalid")

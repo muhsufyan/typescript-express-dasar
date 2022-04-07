@@ -1,13 +1,10 @@
-// validasi register
 import { Request, Response, NextFunction } from "express";
 import { check, validationResult } from "express-validator";
 
 // validasi data
-const validate = [
+const todovalidate = [
     // data masuk dicek dulu
-    // apakah ada username dg tipe string
-    check('username').isString(),
-    check('password').isLength({min:6}),
+    check('description').isString(),
     (req: Request, res: Response, next: NextFunction)=>{
         // cek dulu jika ada error
         const errors = validationResult(req);
@@ -19,4 +16,4 @@ const validate = [
     }
 
 ]
-export default validate;
+export default todovalidate;
