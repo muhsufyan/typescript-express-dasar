@@ -7,7 +7,7 @@ import cors from "cors";
 import UserRoutes from './routers/UserRoutes';
 import AuthRoutes from './routers/AuthRoutes';
 import {config as dotenv} from 'dotenv';
-
+import TodoRoutes from './routers/TodoRoutes';
 class App{
     // buat variabel global app yg bertipe Application
     public app: Application;
@@ -30,6 +30,8 @@ class App{
         // route terpisah
         this.app.use("/api/v1/users", UserRoutes)
         this.app.use("/api/v1/auth", AuthRoutes)
+        // route untuk todo
+        this.app.use("/api/v1/todos", TodoRoutes)
     }
     // buat constructor untuk Application agar tipe data Application dpt digunakan
     constructor(){
